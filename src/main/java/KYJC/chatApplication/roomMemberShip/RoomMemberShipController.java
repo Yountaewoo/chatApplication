@@ -1,5 +1,7 @@
 package KYJC.chatApplication.roomMemberShip;
 
+import KYJC.chatApplication.Member.Member;
+import KYJC.chatApplication.entity.ChatRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -39,17 +41,17 @@ public class RoomMemberShipController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public RoomMemberShipResponse createRoomMemberShip(@RequestBody RoomMemberShipRequest request) {
-        Member member = service.findMemberById(request.getUserId());
-        ChatRoom chatRoom = service.findChatRoomById(request.getChatRoomId());
-        RoomMemberShip roomMemberShip = new RoomMemberShip(member, chatRoom);
-        RoomMemberShip savedRoomMemberShip = service.save(roomMemberShip);
-        return new RoomMemberShipResponse(
-                savedRoomMemberShip.getId(),
-                savedRoomMemberShip.getMember().getId(),
-                savedRoomMemberShip.getChatRoom().getId());
-    }
+   @PostMapping
+   public RoomMemberShipResponse createRoomMemberShip(@RequestBody RoomMemberShipRequest request) {
+       Member member = service.findMemberById(request.getUserId());
+       ChatRoom chatRoom = service.findChatRoomById(request.getChatRoomId());
+       RoomMemberShip roomMemberShip = new RoomMemberShip(member, chatRoom);
+       RoomMemberShip savedRoomMemberShip = service.save(roomMemberShip);
+       return new RoomMemberShipResponse(
+               savedRoomMemberShip.getId(),
+               savedRoomMemberShip.getMember().getId(),
+               savedRoomMemberShip.getChatRoom().getId());
+   }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRoomMemberShip(@PathVariable Long id) {

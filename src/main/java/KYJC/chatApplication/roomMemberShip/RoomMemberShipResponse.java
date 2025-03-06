@@ -1,9 +1,12 @@
 package KYJC.chatApplication.roomMemberShip;
 
+import lombok.Getter;
+
+@Getter
 public class RoomMemberShipResponse {
-    private Long id;
-    private Long userId;
-    private Long chatRoomId;
+    private final Long id;
+    private final Long userId;
+    private final Long chatRoomId;
 
     public RoomMemberShipResponse(Long id, Long userId, Long chatRoomId) {
         this.id = id;
@@ -11,15 +14,4 @@ public class RoomMemberShipResponse {
         this.chatRoomId = chatRoomId;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public Long getChatRoomId() {
-        return chatRoomId;
-    }
 }
