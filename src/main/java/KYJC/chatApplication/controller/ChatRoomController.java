@@ -1,12 +1,10 @@
 package KYJC.chatApplication.controller;
 
-import KYJC.chatApplication.entity.ChatRoom;
 import KYJC.chatApplication.request.ChatRoomRequest;
 import KYJC.chatApplication.request.ChatRoomUpdateRequest;
 import KYJC.chatApplication.response.ChatRoomResponse;
 import KYJC.chatApplication.service.ChatRoomService;
-import KYJC.chatApplication.JwtProvider;
-import org.springframework.http.HttpHeaders;
+import KYJC.chatApplication.Member.LoginMember;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,24 +13,16 @@ import org.springframework.web.bind.annotation.*;
 public class ChatRoomController {
 
     private final ChatRoomService chatRoomService;
-    private final JwtProvider jwtProvider;
 
-    public ChatRoomController(ChatRoomService chatRoomService, JwtProvider jwtProvider) {
+    public ChatRoomController(ChatRoomService chatRoomService) {
         this.chatRoomService = chatRoomService;
-        this.jwtProvider = jwtProvider;
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public ChatRoomResponse createChatRoom(
             @RequestBody ChatRoomRequest request,
-            @RequestHeader(HttpHeaders.AUTHORIZATION) String bearerToken) {
-
-        String token = extractToken(bearerToken);
-        if (!jwtProvider.isValidToken(token)) {
-            throw new IllegalArgumentException("로그인 정보가 유효하지 않습니다");
-        }
-
+            @LoginMember String loginId) {
         return chatRoomService.createChatRoom(request.name());
     }
 
@@ -41,22 +31,7 @@ public class ChatRoomController {
     public ChatRoomResponse updateChatRoom(
             @PathVariable Long chatRoomId,
             @RequestBody ChatRoomUpdateRequest request,
-            @RequestHeader(HttpHeaders.AUTHORIZATION) String bearerToken) {
-
-        String token = extractToken(bearerToken);
-        if (!jwtProvider.isValidToken(token)) {
-            throw new IllegalArgumentException("로그인 정보가 유효하지 않습니다");
-        }
-
+            @LoginMember String loginId) {
         return chatRoomService.updateChatRoom(chatRoomId, request.name());
-    }
-
-    // Authorization 헤더에서 "Bearer " 접두어를 제거하고 실제 토큰만 추출하는 메서드
-    private String extractToken(String bearerToken) {
-        final String BEARER_PREFIX = "Bearer ";
-        if (bearerToken == null || !bearerToken.startsWith(BEARER_PREFIX)) {
-            throw new IllegalArgumentException("로그인 정보가 유효하지 않습니다");
-        }
-        return bearerToken.substring(BEARER_PREFIX.length());
     }
 }
