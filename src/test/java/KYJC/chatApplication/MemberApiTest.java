@@ -39,7 +39,7 @@ public class MemberApiTest {
                 .body(new CreateMemberRequest(
                         "도라에몽",
                         "dora123",
-                        "1213456789"))
+                        "ABCdef123!!"))
                 .when()
                 .post("/signUp") // POST /members 요청
                 .then().log().all()
@@ -57,7 +57,7 @@ public class MemberApiTest {
                 .body(new CreateMemberRequest(
                         "도라에몽",
                         "dora123",
-                        "1213456789"))
+                        "ABCdef123!!"))
                 .when()
                 .post("/signUp") // POST /members 요청
                 .then().log().all()
@@ -71,7 +71,7 @@ public class MemberApiTest {
                 .contentType(ContentType.JSON)
                 .body(new LoginRequest(
                         "dora123",
-                        "1213456789"))
+                        "ABCdef123!!"))
                 .when()
                 .post("/signIn") // POST /members 요청
                 .then().log().all()
@@ -89,7 +89,7 @@ public class MemberApiTest {
                 .body(new CreateMemberRequest(
                         "도라에몽",
                         "dora123",
-                        "1213456789"))
+                        "ABCdef123!!"))
                 .when()
                 .post("/signUp") // POST /members 요청
                 .then().log().all()
@@ -103,7 +103,7 @@ public class MemberApiTest {
                 .contentType(ContentType.JSON)
                 .body(new LoginRequest(
                         "dora123",
-                        "1213456789"))
+                        "ABCdef123!!"))
                 .when()
                 .post("/signIn") // POST /members 요청
                 .then().log().all()
@@ -117,13 +117,10 @@ public class MemberApiTest {
                 .given().log().all()
                 // TODO: "token" 실제 코드 작성
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + 로그인토큰.token())
-                .queryParam("id", 회원.Id()) // 요청 쿼리 파라미터로 id 전달
                 .when()
-                .delete("/member")
+                .delete("/member/{memberId}", 회원.Id())
                 .then().log().all()
                 .statusCode(200);
-
-
 
     }
 }
