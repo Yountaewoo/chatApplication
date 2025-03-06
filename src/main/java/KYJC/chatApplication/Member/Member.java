@@ -1,23 +1,26 @@
 package KYJC.chatApplication.Member;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import KYJC.chatApplication.entity.BaseEntity;
+import jakarta.persistence.*;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class Member {
+public class Member extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String userName;
+
+    @Column(nullable = false,unique = true)
     private String loginId;
+
+    @Column(nullable = false,unique = true)
     private String password;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+
     private LocalDateTime deletedAt;
 
     protected Member() {
@@ -46,19 +49,10 @@ public class Member {
         return password;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
 
     public LocalDateTime getDeletedAt() {
         return deletedAt;
     }
-
-
 
     //비밀번호 확인
     public boolean isCorrectPassword(String password){
