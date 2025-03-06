@@ -98,7 +98,7 @@
 ### - Member : memberId
 ### - ChatRoom : chatRoomId
 
-## RoomMemberShip 생성 (/RoomMemberShip) Post
+## RoomMemberShip 생성 (/room-memberships) Post
 ### request RequestBody
 ### - Long : userId
 ### - Long : chatRoomId
