@@ -26,10 +26,10 @@ public class MemberRestController {
     }
 
     //탈퇴
-    @DeleteMapping("/member")
+    @DeleteMapping("/member/{memberId}")
     public void delete(@LoginMember String loginId,
-                       @RequestParam Long id){
-        memberService.delete(loginId,id);
+                       @PathVariable Long memberId){
+        memberService.delete(loginId,memberId);
     }
 
 
