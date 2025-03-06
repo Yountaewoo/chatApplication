@@ -70,17 +70,17 @@
 #### - String : content
 #### - boolean : isDeleted(기본 false)
 
-## 메세지 생성 (/message) Post
+## 메세지 생성 (/messages) Post
 ### request / RequestBody, RequestHeader
 ### - String : token
-### - Long : userId
+### - Long : memberId
 ### - String : content
 
 ### response
 ### - Long : messageId
 ### - String : content
 
-## 사용자가 속해 있는 채팅방의 메세지 조회 (/message/{roomId}) Get
+## 사용자가 속해 있는 채팅방의 메세지 조회 (/messages/{roomId}) Get
 ### request / PathVariable, RequestHeader
 ### - String : token
 ### - Long : userId
