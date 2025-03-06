@@ -1,12 +1,11 @@
 package KYJC.chatApplication.service;
 
-import KYJC.chatApplication.Member.Member;
-import KYJC.chatApplication.Member.MemberRepository;
+import KYJC.chatApplication.entity.Member;
+import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.entity.Message;
 import KYJC.chatApplication.repository.ChatRoomRepository;
 import KYJC.chatApplication.repository.MessageRepository;
 import KYJC.chatApplication.request.MessageRequest;
-import KYJC.chatApplication.response.MessageDetailResponse;
 import KYJC.chatApplication.response.MessageResponse;
 import org.springframework.stereotype.Service;
 

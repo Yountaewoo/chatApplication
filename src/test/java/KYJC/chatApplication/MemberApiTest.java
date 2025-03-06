@@ -1,6 +1,8 @@
 package KYJC.chatApplication;
 
-import KYJC.chatApplication.Member.*;
+import KYJC.chatApplication.request.CreateMemberRequest;
+import KYJC.chatApplication.request.LoginRequest;
+import KYJC.chatApplication.response.MemberSignupResponse;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;

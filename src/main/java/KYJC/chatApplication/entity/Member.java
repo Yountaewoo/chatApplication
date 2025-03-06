@@ -1,5 +1,6 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.entity;
 
+import KYJC.chatApplication.SecurityUtils;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

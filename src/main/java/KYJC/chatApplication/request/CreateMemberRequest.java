@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.request;
 
 public record CreateMemberRequest(String username,
                                   String loginId,

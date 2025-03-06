@@ -1,5 +1,12 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.service;
 
+import KYJC.chatApplication.AccessToken;
+import KYJC.chatApplication.JwtProvider;
+import KYJC.chatApplication.entity.Member;
+import KYJC.chatApplication.repository.MemberRepository;
+import KYJC.chatApplication.request.CreateMemberRequest;
+import KYJC.chatApplication.request.LoginRequest;
+import KYJC.chatApplication.response.MemberSignupResponse;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -26,8 +33,7 @@ public class MemberService {
                 member.getUserName(),
                 member.getLoginId(),
                 member.getPassword(),
-                member.getCreatedAt()
-        );
+                member.getCreatedAt());
     }
 
     //로그인
