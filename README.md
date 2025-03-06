@@ -85,8 +85,10 @@
 ### - String : token
 ### - Long : userId
 
-### request
+### response
 ### - String : content
+### - Long : receiverId
+
 
 ------------------------------------------------------------------------------------------
 

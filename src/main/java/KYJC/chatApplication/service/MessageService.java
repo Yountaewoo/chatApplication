@@ -3,8 +3,10 @@ package KYJC.chatApplication.service;
 import KYJC.chatApplication.Member.Member;
 import KYJC.chatApplication.Member.MemberRepository;
 import KYJC.chatApplication.entity.Message;
+import KYJC.chatApplication.repository.ChatRoomRepository;
 import KYJC.chatApplication.repository.MessageRepository;
 import KYJC.chatApplication.request.MessageRequest;
+import KYJC.chatApplication.response.MessageDetailResponse;
 import KYJC.chatApplication.response.MessageResponse;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +18,14 @@ public class MessageService {
 
     private final MessageRepository messageRepository;
     private final MemberRepository memberRepository;
+    private final ChatRoomRepository chatRoomRepository;
 
-    public MessageService(MessageRepository messageRepository, MemberRepository memberRepository) {
+    public MessageService(MessageRepository messageRepository,
+                          MemberRepository memberRepository,
+                          ChatRoomRepository chatRoomRepository) {
         this.messageRepository = messageRepository;
         this.memberRepository = memberRepository;
+        this.chatRoomRepository = chatRoomRepository;
     }
 
     public MessageResponse create(Member member, MessageRequest messageRequest) {
@@ -33,5 +39,8 @@ public class MessageService {
         return new MessageResponse(message.getId(), message.getContent());
     }
 
-    public
+//    public MessageDetailResponse get(Member member, Long roomId) {
+//        chatRoomRepository.findById(roomId);
+//
+//    }
 }
