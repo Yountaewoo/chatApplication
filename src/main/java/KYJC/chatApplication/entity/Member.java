@@ -58,4 +58,8 @@ public class Member extends BaseEntity {
     public boolean isCorrectPassword(String password){
         return this.getPassword().equals(SecurityUtils.sha256EncryptHex2(password));
     }
+
+    public void softDelete() {
+        this.deletedAt = LocalDateTime.now();
+    }
 }
