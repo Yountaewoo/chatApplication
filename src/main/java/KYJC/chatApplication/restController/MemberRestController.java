@@ -1,7 +1,6 @@
 package KYJC.chatApplication.restController;
 
 import KYJC.chatApplication.AccessToken;
-import KYJC.chatApplication.JwtProvider;
 import KYJC.chatApplication.LoginMember;
 import KYJC.chatApplication.request.CreateMemberRequest;
 import KYJC.chatApplication.request.DeleteMemberRequest;
@@ -14,11 +13,9 @@ import org.springframework.web.bind.annotation.*;
 public class MemberRestController {
 
     private final MemberService memberService;
-    private final JwtProvider jwtProvider;
 
-    public MemberRestController(MemberService memberService, JwtProvider jwtProvider) {
+    public MemberRestController(MemberService memberService) {
         this.memberService = memberService;
-        this.jwtProvider = jwtProvider;
     }
 
     //회원가입
