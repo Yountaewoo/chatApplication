@@ -65,7 +65,7 @@ public class MemberService {
 
         // ID 검증 후 삭제
         if (member.getId().equals(id)) {
-            memberRepository.deleteById(id);
+            member.softDelete();
         } else {
             throw new IllegalArgumentException("회원 정보와 일치하지 않는 ID입니다.");
         }

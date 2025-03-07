@@ -38,6 +38,4 @@ public class MemberRestController {
                        @PathVariable Long memberId){
         memberService.delete(loginId,memberId);
     }
-
-
 }
