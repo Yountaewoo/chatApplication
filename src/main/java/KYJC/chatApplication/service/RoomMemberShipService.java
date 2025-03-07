@@ -1,9 +1,11 @@
-package KYJC.chatApplication.roomMemberShip;
+package KYJC.chatApplication.service;
 
 import KYJC.chatApplication.entity.Member;
+import KYJC.chatApplication.entity.RoomMemberShip;
 import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.entity.ChatRoom;
 import KYJC.chatApplication.repository.ChatRoomRepository;
+import KYJC.chatApplication.repository.RoomMemberShipRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
