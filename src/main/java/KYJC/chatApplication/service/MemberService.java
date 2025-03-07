@@ -5,7 +5,6 @@ import KYJC.chatApplication.JwtProvider;
 import KYJC.chatApplication.entity.Member;
 import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.request.CreateMemberRequest;
-import KYJC.chatApplication.request.DeleteMemberRequest;
 import KYJC.chatApplication.request.LoginRequest;
 import KYJC.chatApplication.response.MemberSignupResponse;
 import org.springframework.stereotype.Service;
@@ -59,7 +58,7 @@ public class MemberService {
         if (member.isCorrectPassword((deleteMemberRequest.password()))) {
             member.softDelete();
         } else {
-            throw new IllegalArgumentException("회원 정보가 틀렸습니다.");
+            throw new IllegalArgumentException("회원 정보와 일치하지 않는 ID입니다.");
         }
     }
 }
