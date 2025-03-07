@@ -1,4 +1,4 @@
-package KYJC.chatApplication.roomMemberShip;
+package KYJC.chatApplication.request;
 
 import lombok.Getter;
 import lombok.Setter;

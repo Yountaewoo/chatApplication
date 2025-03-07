@@ -1,7 +1,11 @@
-package KYJC.chatApplication.roomMemberShip;
+package KYJC.chatApplication.restController;
 
 import KYJC.chatApplication.entity.Member;
 import KYJC.chatApplication.entity.ChatRoom;
+import KYJC.chatApplication.entity.RoomMemberShip;
+import KYJC.chatApplication.request.RoomMemberShipRequest;
+import KYJC.chatApplication.response.RoomMemberShipResponse;
+import KYJC.chatApplication.service.RoomMemberShipService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

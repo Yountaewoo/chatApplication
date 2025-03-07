@@ -1,9 +1,12 @@
 package KYJC.chatApplication.roomMemberShip;
 
 import KYJC.chatApplication.entity.Member;
+import KYJC.chatApplication.entity.RoomMemberShip;
 import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.entity.ChatRoom;
 import KYJC.chatApplication.repository.ChatRoomRepository;
+import KYJC.chatApplication.repository.RoomMemberShipRepository;
+import KYJC.chatApplication.service.RoomMemberShipService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
