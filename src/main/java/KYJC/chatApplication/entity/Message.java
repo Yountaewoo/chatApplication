@@ -11,10 +11,6 @@ public class Message extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Member receiver;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
     private Member sender;
 
     @Column(nullable = false)
@@ -22,8 +18,7 @@ public class Message extends BaseEntity {
 
     private boolean idDeleted = false;
 
-    public Message(Member receiver, Member sender, String content) {
-        this.receiver = receiver;
+    public Message(Member sender, String content) {
         this.sender = sender;
         this.content = content;
     }
@@ -33,10 +28,6 @@ public class Message extends BaseEntity {
 
     public Long getId() {
         return id;
-    }
-
-    public Member getReceiver() {
-        return receiver;
     }
 
     public Member getSender() {
