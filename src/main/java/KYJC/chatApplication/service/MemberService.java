@@ -5,6 +5,7 @@ import KYJC.chatApplication.JwtProvider;
 import KYJC.chatApplication.entity.Member;
 import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.request.CreateMemberRequest;
+import KYJC.chatApplication.request.DeleteMemberRequest;
 import KYJC.chatApplication.request.LoginRequest;
 import KYJC.chatApplication.response.MemberSignupResponse;
 import org.springframework.stereotype.Service;
