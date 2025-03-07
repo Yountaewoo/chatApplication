@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

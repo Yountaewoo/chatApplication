@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.response;
 
 import java.time.LocalDateTime;
 

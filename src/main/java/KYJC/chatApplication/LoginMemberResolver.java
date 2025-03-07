@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpHeaders;

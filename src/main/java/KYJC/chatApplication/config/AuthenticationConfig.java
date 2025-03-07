@@ -1,5 +1,6 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.config;
 
+import KYJC.chatApplication.LoginMemberResolver;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

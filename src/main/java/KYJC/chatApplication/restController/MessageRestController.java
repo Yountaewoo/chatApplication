@@ -1,15 +1,12 @@
 package KYJC.chatApplication.restController;
 
-import KYJC.chatApplication.Member.LoginMember;
-import KYJC.chatApplication.Member.LoginMemberResolver;
-import KYJC.chatApplication.Member.Member;
-import KYJC.chatApplication.Member.MemberRepository;
+import KYJC.chatApplication.LoginMember;
+import KYJC.chatApplication.LoginMemberResolver;
+import KYJC.chatApplication.entity.Member;
+import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.request.MessageRequest;
-import KYJC.chatApplication.response.MessageDetailResponse;
 import KYJC.chatApplication.response.MessageResponse;
 import KYJC.chatApplication.service.MessageService;
-import org.apache.tomcat.util.http.parser.Authorization;
-import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.*;
 
 

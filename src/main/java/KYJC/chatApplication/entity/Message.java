@@ -1,6 +1,5 @@
 package KYJC.chatApplication.entity;
 
-import KYJC.chatApplication.Member.Member;
 import jakarta.persistence.*;
 
 @Entity
