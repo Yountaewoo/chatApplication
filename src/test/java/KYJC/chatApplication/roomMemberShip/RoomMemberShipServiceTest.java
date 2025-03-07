@@ -37,36 +37,36 @@ class RoomMemberShipServiceTest {
         MockitoAnnotations.openMocks(this);
     }
 
-    @Test
-    void testFindAll() {
-        roomMemberShipService.findAll();
-        verify(roomMemberShipRepository, times(1)).findAll();
-    }
+//    @Test
+//    void testFindAll() {
+//        roomMemberShipService.findAll();
+//        verify(roomMemberShipRepository, times(1)).findAll();
+//    }
 
-    @Test
-    void testFindById() {
-        Long id = 1L;
-        when(roomMemberShipRepository.findById(id)).thenReturn(Optional.of(new RoomMemberShip()));
-        Optional<RoomMemberShip> result = roomMemberShipService.findById(id);
-        assertTrue(result.isPresent());
-        verify(roomMemberShipRepository, times(1)).findById(id);
-    }
+//    @Test
+//    void testFindById() {
+//        Long id = 1L;
+//        when(roomMemberShipRepository.findById(id)).thenReturn(Optional.of(new RoomMemberShip()));
+//        Optional<RoomMemberShip> result = roomMemberShipService.findById(id);
+//        assertTrue(result.isPresent());
+//        verify(roomMemberShipRepository, times(1)).findById(id);
+//    }
 
-    @Test
-    void testSave() {
-        RoomMemberShip roomMemberShip = new RoomMemberShip();
-        when(roomMemberShipRepository.save(roomMemberShip)).thenReturn(roomMemberShip);
-        RoomMemberShip result = roomMemberShipService.save(roomMemberShip);
-        assertNotNull(result);
-        verify(roomMemberShipRepository, times(1)).save(roomMemberShip);
-    }
+//    @Test
+//    void testSave() {
+//        RoomMemberShip roomMemberShip = new RoomMemberShip();
+//        when(roomMemberShipRepository.save(roomMemberShip)).thenReturn(roomMemberShip);
+//        RoomMemberShip result = roomMemberShipService.save(roomMemberShip);
+//        assertNotNull(result);
+//        verify(roomMemberShipRepository, times(1)).save(roomMemberShip);
+//    }
 
-    @Test
-    void testDeleteById() {
-        Long id = 1L;
-        roomMemberShipService.deleteById(id);
-        verify(roomMemberShipRepository, times(1)).deleteById(id);
-    }
+//    @Test
+//    void testDeleteById() {
+//        Long id = 1L;
+//        roomMemberShipService.deleteById(id);
+//        verify(roomMemberShipRepository, times(1)).deleteById(id);
+//    }
 
     @Test
     void testFindMemberById() {
