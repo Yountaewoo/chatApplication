@@ -6,7 +6,7 @@ import lombok.Setter;
 @Setter
 @Getter
 public class RoomMemberShipRequest {
-    private Long userId;
+    private Long memberId;
     private Long chatRoomId;
 
 }
