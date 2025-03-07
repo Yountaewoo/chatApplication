@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

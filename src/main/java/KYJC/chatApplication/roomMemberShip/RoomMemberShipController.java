@@ -1,6 +1,6 @@
 package KYJC.chatApplication.roomMemberShip;
 
-import KYJC.chatApplication.Member.Member;
+import KYJC.chatApplication.entity.Member;
 import KYJC.chatApplication.entity.ChatRoom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
