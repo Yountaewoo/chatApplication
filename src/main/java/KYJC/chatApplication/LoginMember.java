@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

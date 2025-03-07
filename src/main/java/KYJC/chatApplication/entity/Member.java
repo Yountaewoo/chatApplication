@@ -1,6 +1,6 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication.entity;
 
-import KYJC.chatApplication.entity.BaseEntity;
+import KYJC.chatApplication.SecurityUtils;
 import jakarta.persistence.*;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 

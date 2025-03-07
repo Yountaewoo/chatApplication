@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication;
 
 public record AccessToken(String token) {
 }

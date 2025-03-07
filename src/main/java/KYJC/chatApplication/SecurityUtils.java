@@ -1,4 +1,4 @@
-package KYJC.chatApplication.Member;
+package KYJC.chatApplication;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

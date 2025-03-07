@@ -1,9 +1,6 @@
-package KYJC.chatApplication.roomMemberShip;
+package KYJC.chatApplication.entity;
 
-import KYJC.chatApplication.Member.Member;
-import KYJC.chatApplication.entity.ChatRoom;
 import jakarta.persistence.*;
-import KYJC.chatApplication.entity.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

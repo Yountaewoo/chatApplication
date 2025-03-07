@@ -1,10 +1,10 @@
-package KYJC.chatApplication.controller;
+package KYJC.chatApplication.restController;
 
 import KYJC.chatApplication.request.ChatRoomRequest;
 import KYJC.chatApplication.request.ChatRoomUpdateRequest;
 import KYJC.chatApplication.response.ChatRoomResponse;
 import KYJC.chatApplication.service.ChatRoomService;
-import KYJC.chatApplication.Member.LoginMember;
+import KYJC.chatApplication.LoginMember;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
