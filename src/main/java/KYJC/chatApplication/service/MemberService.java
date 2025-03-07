@@ -5,6 +5,7 @@ import KYJC.chatApplication.JwtProvider;
 import KYJC.chatApplication.entity.Member;
 import KYJC.chatApplication.repository.MemberRepository;
 import KYJC.chatApplication.request.CreateMemberRequest;
+import KYJC.chatApplication.request.DeleteMemberRequest;
 import KYJC.chatApplication.request.LoginRequest;
 import KYJC.chatApplication.response.MemberSignupResponse;
 import org.springframework.stereotype.Service;
@@ -49,25 +50,16 @@ public class MemberService {
         }
     }
 
-    //회원탈퇴
-//    public void delete(String loginId) {
-//        Member member = memberRepository.findByloginId(loginId)
-//                .orElseThrow(() -> new IllegalArgumentException("회원 정보 찾을 수 없음"));
-//
-//        memberRepository.deleteById(member.getId());
-//    }
-    public void delete(String loginId, Long id) {
+    public void delete(String loginId, DeleteMemberRequest deleteMemberRequest) {
         // loginId로 회원 조회 (기존 메소드 사용)
         Member member = memberRepository.findByloginId(loginId);
         if (member == null) {
             throw new IllegalArgumentException("회원 정보 찾을 수 없음");
         }
-
-        // ID 검증 후 삭제
-        if (member.getId().equals(id)) {
-            memberRepository.deleteById(id);
+        if (member.isCorrectPassword((deleteMemberRequest.password()))) {
+            member.softDelete();
         } else {
-            throw new IllegalArgumentException("회원 정보와 일치하지 않는 ID입니다.");
+            throw new IllegalArgumentException("회원 정보가 틀렸습니다.");
         }
     }
 }
