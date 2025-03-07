@@ -23,7 +23,7 @@ public class ChatRoomController {
     public ChatRoomResponse createChatRoom(
             @RequestBody ChatRoomRequest request,
             @LoginMember String loginId) {
-        return chatRoomService.createChatRoom(request.name());
+        return chatRoomService.createChatRoom(request.name(),loginId);
     }
 
     @PutMapping("/{chatRoomId}")
