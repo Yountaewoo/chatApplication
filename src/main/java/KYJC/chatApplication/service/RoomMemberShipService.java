@@ -65,4 +65,30 @@ public class RoomMemberShipService {
     public ChatRoom findChatRoomById(Long id) {
         return chatRoomRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid chat room ID"));
     }
+
+    //사용자id, 채팅방id
+    public void leaveRoomMemberShip(String userId, Long chatroomId){
+        Member member = memberRepository.findByloginId(userId);
+        if (member ==null){
+            throw new IllegalArgumentException(("해당 사용자가 없습니다"));
+        }
+        ChatRoom chatRoom = chatRoomRepository.findById(chatroomId).orElseThrow(()-> new IllegalArgumentException("해당 채팅방 없음"));
+
+        //해당 채팅방에 들어가있는 회원인지 확인
+        RoomMemberShip roomMemberShip = repository.findByMemberAndChatRoom(member, chatRoom);
+
+        //채팅방 나가기
+        repository.delete(roomMemberShip);
+
+        // 둘다 나갔을때 채팅방 완전 삭제
+        List<RoomMemberShip> remainingMembers = repository.findByChatRoom(chatRoom);
+        if(remainingMembers.isEmpty()){
+            chatRoom.markAsDeleted();
+            chatRoomRepository.save(chatRoom);
+        }
+
+
+
+
+    }
 }
