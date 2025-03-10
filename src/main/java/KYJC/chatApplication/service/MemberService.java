@@ -50,12 +50,6 @@ public class MemberService {
     }
 
     //회원탈퇴
-//    public void delete(String loginId) {
-//        Member member = memberRepository.findByloginId(loginId)
-//                .orElseThrow(() -> new IllegalArgumentException("회원 정보 찾을 수 없음"));
-//
-//        memberRepository.deleteById(member.getId());
-//    }
     public void delete(String loginId, Long id) {
         // loginId로 회원 조회 (기존 메소드 사용)
         Member member = memberRepository.findByloginId(loginId);
