@@ -23,11 +23,18 @@ public class RoomMemberShip extends BaseEntity {
     @JoinColumn(name = "chat_room_id", nullable = false)
     private ChatRoom chatRoom;
 
-
+    private boolean isDeleted = false;
 
     public RoomMemberShip(Member member, ChatRoom chatRoom) {
         super();
     }
 
+    public boolean isDeleted() {
+        return isDeleted;
+    }
 
+    //소프트 딜리트
+    public void Deleted(){
+        this.isDeleted = true;
+    }
 }
