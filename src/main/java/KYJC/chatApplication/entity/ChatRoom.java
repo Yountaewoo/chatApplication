@@ -42,4 +42,8 @@ public class ChatRoom {
     public void updateName(String newName) {
         this.name = newName;
     }
+
+    public void markAsDeleted(){
+        this.isDeleted = true;
+    }
 }
