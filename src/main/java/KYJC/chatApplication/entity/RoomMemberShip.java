@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor  // ID값에는 필요없으므로 삭제해야함 -> strategy = GenerationType.IDENTITY 이부분때문에 저장시 오류
 public class RoomMemberShip extends BaseEntity {
 
     @Id
